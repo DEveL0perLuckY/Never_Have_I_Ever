@@ -6,7 +6,6 @@ import Home from "./Screens/Home";
 import Setting from "./Screens/Setting";
 import Deck from "./Screens/Deck";
 import CustomHeader from "./Screens/CustomHeader";
-import { faL } from "@fortawesome/free-solid-svg-icons";
 
 const Stack = createNativeStackNavigator();
 const navTheme = {
