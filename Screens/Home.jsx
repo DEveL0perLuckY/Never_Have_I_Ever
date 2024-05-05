@@ -73,7 +73,7 @@ function Home({ navigation }) {
             source={require("../assets/playButton.png")}
             style={styles.icon}
           />
-          <Text style={{ color: "#001c37",fontWeight:"bold", fontSize: 25 }}>Play</Text>
+          <Text style={{ color: "#001c37",fontWeight:"bold", fontSize: 25 }}>PLAY</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -87,7 +87,7 @@ function Home({ navigation }) {
             source={require("../assets/multiplayer.png")}
             style={styles.icon}
           />
-          <Text style={{ color: "#001c37",fontWeight:"bold", fontSize: 25 }}>Multiplayer</Text>
+          <Text style={{ color: "#001c37",fontWeight:"bold", fontSize: 25 }}>MULTIPLAYER</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -102,7 +102,7 @@ function Home({ navigation }) {
             style={styles.icon}
           />
 
-          <Text style={{ color: "#001c37",fontWeight:"bold", fontSize: 25 }}>How to Play</Text>
+          <Text style={{ color: "#001c37",fontWeight:"bold", fontSize: 25 }}>HOW TO PLAY</Text>
         </TouchableOpacity>
       </View>
       <BottomButtons />

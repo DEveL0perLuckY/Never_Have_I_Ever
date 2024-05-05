@@ -73,7 +73,7 @@ function Deck({ navigation }) {
             <TouchableOpacity
               style={[styles.cardButton, { backgroundColor: "#6a5152" }]}
             >
-              <Text style={styles.cardButtonText}>Play</Text>
+              <Text style={styles.cardButtonText}>PLAY</Text>
             </TouchableOpacity>
           </View>
           <View>
@@ -87,7 +87,7 @@ function Deck({ navigation }) {
             <TouchableOpacity
               style={[styles.cardButton, { backgroundColor: "#697a34" }]}
             >
-              <Text style={styles.cardButtonText}>Play</Text>
+              <Text style={styles.cardButtonText}>PLAY</Text>
             </TouchableOpacity>
           </View>
 
