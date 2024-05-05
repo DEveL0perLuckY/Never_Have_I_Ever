@@ -1,6 +1,4 @@
 import {
-  TouchableOpacity,
-  Text,
   View,
   StyleSheet,
   ToastAndroid,
