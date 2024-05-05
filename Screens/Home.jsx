@@ -4,18 +4,11 @@ import {
   ToastAndroid,
   BackHandler,
   Image,
+  Text,
   TouchableOpacity,
 } from "react-native";
-import {
-  faPlay,
-  faUsers,
-  faGamepad,
-  faCog,
-} from "@fortawesome/free-solid-svg-icons";
 import React, { useEffect, useState } from "react";
 import BottomButtons from "./BottomButtons";
-import CustomButton from "./CustomButton";
-import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 
 function Home({ navigation }) {
   const [backButtonPressedOnce, setBackButtonPressedOnce] = useState(false);
@@ -48,13 +41,18 @@ function Home({ navigation }) {
 
   return (
     <View style={styles.root}>
-      <View style={{flexDirection:"row",justifyContent:"flex-end",margin:25}}>
+      <View
+        style={{ flexDirection: "row", justifyContent: "flex-end", margin: 25 }}
+      >
         <TouchableOpacity
           onPress={() => {
             navigation.navigate("Setting");
           }}
         >
-          <FontAwesomeIcon icon={faCog} size={30} color="white" />
+          <Image
+            source={require("../assets/Settingsicon.png")}
+            style={styles.icon}
+          />
         </TouchableOpacity>
       </View>
       <View style={[styles.container, { marginBottom: 50 }]}>
@@ -64,30 +62,48 @@ function Home({ navigation }) {
         />
       </View>
       <View style={[styles.container]}>
-        <CustomButton
-          title="Play"
-          sendRedirect={() => {
+        <TouchableOpacity
+          activeOpacity={0.8}
+          onPress={() => {
             navigation.navigate("Deck");
           }}
-          color="#32a852"
-          icon={faPlay}
-        />
-        <CustomButton
-          title="Multiplayer"
-          sendRedirect={() => {
+          style={[styles.button, { backgroundColor: "#32a852" }]}
+        >
+          <Image
+            source={require("../assets/playButton.png")}
+            style={styles.icon}
+          />
+          <Text style={{ color: "#001c37",fontWeight:"bold", fontSize: 25 }}>Play</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          activeOpacity={0.8}
+          onPress={() => {
             ToastAndroid.show("Multiplayer comming soon", ToastAndroid.SHORT);
           }}
-          color="#a83232"
-          icon={faUsers}
-        />
-        <CustomButton
-          sendRedirect={() => {
+          style={[styles.button, { backgroundColor: "#a83232" }]}
+        >
+          <Image
+            source={require("../assets/multiplayer.png")}
+            style={styles.icon}
+          />
+          <Text style={{ color: "#001c37",fontWeight:"bold", fontSize: 25 }}>Multiplayer</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          activeOpacity={0.8}
+          onPress={() => {
             ToastAndroid.show("How to play", ToastAndroid.SHORT);
           }}
-          title="How to Play"
-          color="#a6a832"
-          icon={faGamepad}
-        />
+          style={[styles.button, { backgroundColor: "#a6a832" }]}
+        >
+          <Image
+            source={require("../assets/howtoplay.png")}
+            style={styles.icon}
+          />
+
+          <Text style={{ color: "#001c37",fontWeight:"bold", fontSize: 25 }}>How to Play</Text>
+        </TouchableOpacity>
       </View>
       <BottomButtons />
     </View>
@@ -103,5 +119,21 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: "center",
     alignItems: "center",
+  },
+  icon: {
+    resizeMode: "stretch",
+    height: 35,
+    width: 35,
+  },
+  button: {
+    flexDirection: "row",
+    width: 230,
+    margin: 10,
+    borderColor: "white",
+    borderWidth: 2,
+    borderRadius: 10,
+    padding: 10,
+    justifyContent: "space-evenly",
+    
   },
 });

@@ -7,8 +7,6 @@ import {
   ToastAndroid,
   Image,
 } from "react-native";
-import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faGamepad } from "@fortawesome/free-solid-svg-icons";
 
 function BottomButtonSettings() {
   return (
@@ -19,7 +17,10 @@ function BottomButtonSettings() {
         }}
       >
         <View style={styles.smallButton}>
-          <FontAwesomeIcon icon={faGamepad} size={20} color="white" />
+          <Image
+            style={{ width: 20, height: 20 }}
+            source={require("../assets/games-control-svgrepo-com.png")}
+          />
           <Text style={styles.smallButtonText}>More Games</Text>
         </View>
       </TouchableOpacity>

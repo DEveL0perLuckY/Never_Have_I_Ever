@@ -7,8 +7,6 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
-import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faCog, faPlay } from "@fortawesome/free-solid-svg-icons";
 import BottomButtonSettings from "./BottomButtonSettings";
 
 const Setting = () => {
@@ -20,11 +18,9 @@ const Setting = () => {
   return (
     <View style={styles.container}>
       <View style={styles.titleDiv}>
-        <FontAwesomeIcon
-          style={{ marginRight: 20 }}
-          icon={faCog}
-          size={30}
-          color="white"
+        <Image
+          source={require("../assets/Settingsicon.png")}
+          style={[{ marginRight:20,width:35,height:35,resizeMode:"stretch"}]}
         />
         <Text style={styles.title}>SETTINGS</Text>
       </View>
@@ -56,7 +52,10 @@ const Setting = () => {
           />
         </View>
         <TouchableOpacity>
-          <FontAwesomeIcon icon={faPlay} size={30} color="#001c37" />
+          <Image
+            source={require("../assets/triangle-right-svgrepo-com.png")}
+            style={styles.icon2}
+          />
         </TouchableOpacity>
       </View>
       <View style={styles.kidMode}>
@@ -81,7 +80,10 @@ const Setting = () => {
         />
         <Text style={styles.text}>Purchases</Text>
         <TouchableOpacity>
-          <FontAwesomeIcon icon={faPlay} size={30} color="#001c37" />
+          <Image
+            source={require("../assets/triangle-right-svgrepo-com.png")}
+            style={styles.icon2}
+          />
         </TouchableOpacity>
       </View>
 
@@ -92,7 +94,7 @@ const Setting = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1, 
+    flex: 1,
     marginTop: 40,
   },
   titleDiv: {
@@ -118,6 +120,13 @@ const styles = StyleSheet.create({
   icon: {
     width: 20,
     height: 20,
+    resizeMode:"stretch"
+
+  },
+  icon2: {
+    width: 20,
+    height: 30,
+    resizeMode:"stretch"
   },
   circle: {
     width: 40,
