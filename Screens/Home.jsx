@@ -4,11 +4,18 @@ import {
   ToastAndroid,
   BackHandler,
   Image,
+  TouchableOpacity,
 } from "react-native";
-import { faPlay, faUsers, faGamepad } from "@fortawesome/free-solid-svg-icons";
+import {
+  faPlay,
+  faUsers,
+  faGamepad,
+  faCog,
+} from "@fortawesome/free-solid-svg-icons";
 import React, { useEffect, useState } from "react";
 import BottomButtons from "./BottomButtons";
 import CustomButton from "./CustomButton";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 
 function Home({ navigation }) {
   const [backButtonPressedOnce, setBackButtonPressedOnce] = useState(false);
@@ -32,7 +39,7 @@ function Home({ navigation }) {
             return true;
           }
         }
-      return false;
+        return false;
       }
     );
 
@@ -41,6 +48,15 @@ function Home({ navigation }) {
 
   return (
     <View style={styles.root}>
+      <View style={{flexDirection:"row",justifyContent:"flex-end",margin:25}}>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("Setting");
+          }}
+        >
+          <FontAwesomeIcon icon={faCog} size={30} color="white" />
+        </TouchableOpacity>
+      </View>
       <View style={[styles.container, { marginBottom: 50 }]}>
         <Image
           style={{ width: 200, height: 200 }}
@@ -83,12 +99,9 @@ export default Home;
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
   },
   container: {
     justifyContent: "center",
     alignItems: "center",
   },
- 
 });

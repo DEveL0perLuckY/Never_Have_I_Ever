@@ -5,7 +5,6 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "./Screens/Home";
 import Setting from "./Screens/Setting";
 import Deck from "./Screens/Deck";
-import CustomHeader from "./Screens/CustomHeader";
 
 const Stack = createNativeStackNavigator();
 const navTheme = {
@@ -27,32 +26,12 @@ export default function App() {
         <NavigationContainer theme={navTheme}>
           <Stack.Navigator
             screenOptions={{
-              headerTransparent: true,
-              headerStyle: { backgroundColor: "transparent" },
-              headerTitle: "",
+              headerShown: false,
             }}
           >
-            <Stack.Screen
-              name="Home"
-              component={Home}
-              options={({ navigation }) => ({
-                headerRight: () => (
-                  <CustomHeader
-                    onPress={() => navigation.navigate("Setting")}
-                  />
-                ),
-              })}
-            />
-            <Stack.Screen
-              name="Deck"
-              options={{ headerShown: false }}
-              component={Deck}
-            />
-            <Stack.Screen
-              name="Setting"
-              options={{ headerShown: false }}
-              component={Setting}
-            />
+            <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="Deck" component={Deck} />
+            <Stack.Screen name="Setting" component={Setting} />
           </Stack.Navigator>
         </NavigationContainer>
       </ImageBackground>
