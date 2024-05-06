@@ -67,7 +67,7 @@ function Home({ navigation }) {
           onPress={() => {
             navigation.navigate("Deck");
           }}
-          style={[styles.button, { backgroundColor: "#32a852" }]}
+          style={[styles.button, { backgroundColor: "#9eda3c" }]}
         >
           <Image
             source={require("../assets/playButton.png")}
@@ -79,9 +79,9 @@ function Home({ navigation }) {
         <TouchableOpacity
           activeOpacity={0.8}
           onPress={() => {
-            ToastAndroid.show("Multiplayer comming soon", ToastAndroid.SHORT);
+            navigation.navigate("GlobalChat")
           }}
-          style={[styles.button, { backgroundColor: "#a83232" }]}
+          style={[styles.button, { backgroundColor: "#eb7171" }]}
         >
           <Image
             source={require("../assets/multiplayer.png")}
@@ -95,7 +95,7 @@ function Home({ navigation }) {
           onPress={() => {
             ToastAndroid.show("How to play", ToastAndroid.SHORT);
           }}
-          style={[styles.button, { backgroundColor: "#a6a832" }]}
+          style={[styles.button, { backgroundColor: "#e0c461" }]}
         >
           <Image
             source={require("../assets/howtoplay.png")}

@@ -122,9 +122,9 @@ function Deck({ navigation }) {
           </View>
         </View>
       </View>
-      <TouchableOpacity style={styles.wave} activeOpacity={0.8}>
+      <TouchableOpacity style={styles.deckContainer} activeOpacity={0.8}>
         <Image
-          style={styles.waveImage}
+          style={styles.deckImage}
           source={require("../assets/DeckScreen.png")}
         />
       </TouchableOpacity>
@@ -306,12 +306,12 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 15,
   },
-  wave: {
+  deckContainer: {
     marginTop: 10,
     flexDirection: "column",
     alignItems: "center",
   },
-  waveImage: {
+  deckImage: {
     justifyContent: "center",
     borderRadius: 40,
     width: 320,

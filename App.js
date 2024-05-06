@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "./Screens/Home";
 import Setting from "./Screens/Setting";
 import Deck from "./Screens/Deck";
+import GlobalChat from "./Screens/GlobalChat";
 
 const Stack = createNativeStackNavigator();
 const navTheme = {
@@ -32,6 +33,7 @@ export default function App() {
             <Stack.Screen name="Home" component={Home} />
             <Stack.Screen name="Deck" component={Deck} />
             <Stack.Screen name="Setting" component={Setting} />
+            <Stack.Screen name="GlobalChat" component={GlobalChat} />
           </Stack.Navigator>
         </NavigationContainer>
       </ImageBackground>
